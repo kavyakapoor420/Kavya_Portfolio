@@ -19,7 +19,7 @@ const Education = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <section id='education' className="container mx-auto px-4 py-12">
       <h3 className="text-4xl text-center font-semibold mb-1">
           My <span className="text-cyan-600">Education</span>
         </h3>
@@ -37,7 +37,7 @@ const Education = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
