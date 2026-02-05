@@ -1,20 +1,68 @@
-import React from "react";
+import { useEffect } from "react";
 import GitHubCalendar from "react-github-calendar";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-const GithubGraph = ({ theme = "light" }) => {
+const GithubStats = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <div className="w-full overflow-x-auto pb-4 scrollbar-hide">
-      <div className="flex min-w-max justify-center text-xs px-4">
-        <GitHubCalendar
-          username="kavyakapoor420"
-          colorScheme={theme === "dark" ? "dark" : "light"}
-          blockSize={10}
-          blockMargin={4}
-          fontSize={12}
-        />
+    <section
+      id="github"
+      className="w-full min-h-screen bg-[#0a192f] text-gray-300 flex items-center"
+    >
+      <div className="max-w-[1000px] mx-auto px-4 w-full">
+        
+        {/* Section Heading */}
+        <div className="grid grid-cols-2 gap-8 mb-12">
+          <div className="sm:text-right pb-8">
+            <p className="text-4xl font-bold inline border-b-8 border-[#C23B22]">
+              GitHub
+            </p>
+          </div>
+          <div />
+        </div>
+
+        {/* Content */}
+        <div className="grid sm:grid-cols-2 gap-8 items-center">
+          
+          {/* Left Text */}
+          <div
+            className="sm:text-right text-3xl font-bold"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <p>
+              Consistency over time. <br />
+              <span className="text-[#C23B22]">
+                Real contributions, real growth.
+              </span>
+            </p>
+          </div>
+
+          {/* GitHub Graph */}
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="overflow-x-auto"
+          >
+            <div className="bg-[#020c1b] p-4 rounded-lg border border-gray-700">
+              <GitHubCalendar
+                username="kavyakapoor420"
+                colorScheme="dark"
+                blockSize={12}
+                blockMargin={5}
+                fontSize={14}
+              />
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default GithubGraph;
+export default GithubStats;

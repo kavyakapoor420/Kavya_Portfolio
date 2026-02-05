@@ -2,6 +2,7 @@ import About from "./Components/About"
 import ContactMe from "./Components/ContactMe"
 import Education from "./Components/Education"
 import Footer from "./Components/Footer"
+import GithubStats from "./Components/GithubGraph"
 import Hero from "./Components/Hero"
 import MyProjects2 from "./Components/MyProjects"
 import MyProjects from "./Components/MyProjects"
@@ -16,6 +17,7 @@ function App() {
         <Navbar/>
         <Hero/>
         <About/>
+        <GithubStats/>
         <MyProjects/>
         {/* <MyProjects2/> */}
         <SkillsSection/>
